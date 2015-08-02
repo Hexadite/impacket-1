@@ -84,9 +84,9 @@ def getKerberosTGT(clientName, password, domain, lmhash, nthash, aesKey='', kdcH
     reqBody = seq_set(asReq, 'req-body')
 
     opts = list()
-    opts.append( constants.KDCOptions.forwardable.value )
-    opts.append( constants.KDCOptions.renewable.value )
-    opts.append( constants.KDCOptions.proxiable.value )
+    # opts.append( constants.KDCOptions.forwardable.value )
+    # opts.append( constants.KDCOptions.renewable.value )
+    # opts.append( constants.KDCOptions.proxiable.value )
     reqBody['kdc-options']  = constants.encodeFlags(opts)
 
     seq_set(reqBody, 'sname', serverName.components_to_asn1)
@@ -218,9 +218,9 @@ def getKerberosTGT(clientName, password, domain, lmhash, nthash, aesKey='', kdcH
     reqBody = seq_set(asReq, 'req-body')
 
     opts = list()
-    opts.append( constants.KDCOptions.forwardable.value )
-    opts.append( constants.KDCOptions.renewable.value )
-    opts.append( constants.KDCOptions.proxiable.value )
+    # opts.append( constants.KDCOptions.forwardable.value )
+    # opts.append( constants.KDCOptions.renewable.value )
+    # opts.append( constants.KDCOptions.proxiable.value )
     reqBody['kdc-options'] = constants.encodeFlags(opts)
 
     seq_set(reqBody, 'sname', serverName.components_to_asn1)
@@ -328,10 +328,10 @@ def getKerberosTGS(serverName, domain, kdcHost, tgt, cipher, sessionKey):
     reqBody = seq_set(tgsReq, 'req-body')
 
     opts = list()
-    opts.append( constants.KDCOptions.forwardable.value )
-    opts.append( constants.KDCOptions.renewable.value )
-    opts.append( constants.KDCOptions.renewable_ok.value )
-    opts.append( constants.KDCOptions.canonicalize.value )
+    # opts.append( constants.KDCOptions.forwardable.value )
+    # opts.append( constants.KDCOptions.renewable.value )
+    # opts.append( constants.KDCOptions.renewable_ok.value )
+    # opts.append( constants.KDCOptions.canonicalize.value )
 
     reqBody['kdc-options'] = constants.encodeFlags(opts)
     seq_set(reqBody, 'sname', serverName.components_to_asn1)
